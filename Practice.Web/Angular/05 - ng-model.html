@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular
+            .module("myApp", [])
+            .controller("myController", function ($scope) {
+                var fruit = {
+                    name: "Avocado",
+                    color: "Green",
+                    comments: ""
+                }
+                $scope.fruit = fruit;
+            });
+    </script>
+</head>
+<body>
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>
+                    Name: <input type="text" placeholder="name" ng-model="fruit.name" /><br />
+                    Color: <input type="text" placeholder="color" ng-model="fruit.color" /><br />
+                    Comments: <input type="text" placeholder="comments" ng-model="fruit.comments"/>
+                </td>
+                <td>
+                    <div>Name: {{fruit.name}}</div>
+                    <div>Color: {{fruit.color}}</div>
+                    <div>Comments: {{fruit.comments}}</div>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+
+</body>
+</html>

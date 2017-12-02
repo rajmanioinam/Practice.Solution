@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular
+            .module("myApp", [])
+            .controller("myController", function ($scope) {
+                var fruits = [{ name: "Avocado", color: "Green" },
+                              { name: "Apple", color: "Red" },
+                              { name: "Banana", color: "Yellow" }];
+                $scope.fruits = fruits;
+            });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="fruit in fruits">
+                <td>{{fruit.name}}</td>
+                <td>{{fruit.color}}</td>
+            </tr>
+        </table>
+        {{fruits.name}}
+    </div>
+</body>
+</html>

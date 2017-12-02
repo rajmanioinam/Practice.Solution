@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular
+            .module("myApp", [])
+            .controller("myController", function ($scope) {
+                var fruit = {
+                    fruitName: "Avocado",
+                    fruitColor: "Green",
+                    fruitPicture: "/Components/Images/avocado.jpg"
+                };
+                $scope.fruit = fruit;
+            });
+    </script>
+</head>
+<body>
+    <div ng-controller="myController">
+        <div>Fruit Name: {{fruit.fruitName}}</div>
+        <div>Color: {{fruit.fruitColor}}</div>
+        <img ng-src="{{fruit.fruitPicture}}" alt="{{fruit.fruitName + 'Avocado'}}" style="height:100px"/>
+    </div>
+</body>
+</html>

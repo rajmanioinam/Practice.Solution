@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head >
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module("myApp", []);
+
+        myApp.controller("myController", function ($scope) {
+            var project = {
+                projName: 'PHX',
+                projLoc: 'Phoenix',
+                projDomain: 'Aviation'
+            };
+            $scope.project = project;
+            $scope.message = "test";
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="myController">
+        <div>Project: {{project.projName}}</div>
+        <div>Location: {{project.projLoc}}</div>
+        <div>Domain: {{project.projDomain}}</div>
+    </div>
+</body>
+</html>

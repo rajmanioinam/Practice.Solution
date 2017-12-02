@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular
+            .module("myApp", [])
+            .filter("myFilter", function () {
+                return function (item) {
+                    switch (item) {
+                        case 1: return "Male";
+                        case 2: return "Female";
+                        case 3: return "Not Disclosed";
+                    };
+                };
+            })
+            .controller("myController", function ($scope) {
+                var employees = [
+               { name: "Ben", gender: 1, salary: 55000 },
+               { name: "Sara", gender: 2, salary: 68000 },
+               { name: "Mark", gender: 1, salary: 57000 },
+               { name: "Pam", gender: 2, salary: 53000 },
+               { name: "Todd", gender: 3, salary: 60000 }
+                ];
+                $scope.employees = employees;
+            });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="employee in employees">
+                <td>{{employee.name}}</td>
+                <td>{{employee.gender|myFilter}}</td>
+                <td>{{employee.salary|currency:"$":2}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
