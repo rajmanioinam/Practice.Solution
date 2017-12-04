@@ -7,28 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Practice.DesignPatternFactoryWeb.Models;
-using Practice.DesignPatternFactoryWeb.Logger;
+using Practice.DesignPatternFactoryWeb.Factory;
+using Practice.DesignPatternFactoryWeb.Managers;
 
 namespace Practice.DesignPatternFactoryWeb.Controllers
 {
-    public class EmployeesController : Controller
+    public class EmployeesController : BaseController
     {
         private Entities db = new Entities();
-        private ILog _Ilog;
-        public EmployeesController()
-        {
-            _Ilog = Log.GetInstance;
-        }
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            _Ilog.LogException(filterContext.Exception.ToString());
-            filterContext.ExceptionHandled = true;
-            this.View("Error").ExecuteResult(this.ControllerContext);
-        }
+
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Employees.ToList());
+            var employees = db.Employees.Include(e => e.Employee_Type);
+            return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -49,6 +41,7 @@ namespace Practice.DesignPatternFactoryWeb.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeTypeId = new SelectList(db.Employee_Type, "Id", "EmployeeType");
             return View();
         }
 
@@ -57,15 +50,20 @@ namespace Practice.DesignPatternFactoryWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,JobDescription,Number,Department")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,Name,JobDescription,Number,Department,EmployeeTypeId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                EmployeeManagerFactory employeeFactory = new EmployeeManagerFactory();
+                IEmployeeManager employeeManager = employeeFactory.GetEmployeeManager(employee.EmployeeTypeId);
+                employee.Bonus = employeeManager.GetBonus();
+                employee.HourlyPay = employeeManager.GetHourlyPay();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.EmployeeTypeId = new SelectList(db.Employee_Type, "Id", "EmployeeType", employee.EmployeeTypeId);
             return View(employee);
         }
 
@@ -81,6 +79,7 @@ namespace Practice.DesignPatternFactoryWeb.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.EmployeeTypeId = new SelectList(db.Employee_Type, "Id", "EmployeeType", employee.EmployeeTypeId);
             return View(employee);
         }
 
@@ -89,7 +88,7 @@ namespace Practice.DesignPatternFactoryWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus,EmployeeTypeId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +96,7 @@ namespace Practice.DesignPatternFactoryWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.EmployeeTypeId = new SelectList(db.Employee_Type, "Id", "EmployeeType", employee.EmployeeTypeId);
             return View(employee);
         }
 
