@@ -44,6 +44,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleFactory\ContractEmployee.cs" />
+    <Compile Include="SimpleFactory\EmployeeManager.cs" />
+    <Compile Include="SimpleFactory\FullTimeEmployee.cs" />
+    <Compile Include="SimpleFactory\IEmployee.cs" />
+    <Compile Include="Singleton\ILog.cs" />
+    <Compile Include="Singleton\Log.cs" />
     <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Singleton\SingletonLazyLoading.cs" />
     <Compile Include="Singleton\SingletonThreadSafety.cs" />

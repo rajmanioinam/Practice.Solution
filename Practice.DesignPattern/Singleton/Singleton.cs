@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Practice.DesignPattern
 {
-    public sealed class Singleton
+    public sealed class SingletonSimple
     {
         private static int counter = 0;
-        private static Singleton instance = null;
-        public static Singleton GetInstance
+        private static SingletonSimple instance = null;
+        public static SingletonSimple GetInstance
         {
             get
             {
                 if(instance==null)
                 {
-                    instance = new Singleton();
+                    instance = new SingletonSimple();
                 }
                 return instance;
             }
         }
-        private Singleton()
+        private SingletonSimple()
         {
             counter++;
             Console.WriteLine("Counter value: " + counter.ToString());

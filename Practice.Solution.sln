@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DesignPattern", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DesignPatternSingletonWeb", "Practice.DesignPatternSingletonWeb\Practice.DesignPatternSingletonWeb.csproj", "{3585CBDA-09A4-4001-B6B8-99D577742F0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DesignPatternFactoryWeb", "Practice.DesignPatternFactoryWeb\Practice.DesignPatternFactoryWeb.csproj", "{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3585CBDA-09A4-4001-B6B8-99D577742F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3585CBDA-09A4-4001-B6B8-99D577742F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3585CBDA-09A4-4001-B6B8-99D577742F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

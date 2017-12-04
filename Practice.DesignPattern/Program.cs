@@ -10,12 +10,13 @@ namespace Practice.DesignPattern
     {
         static void Main(string[] args)
         {
-            //SINGLETON
+            #region SINGLETON
+            //SINGLETON SIMPLE
             Console.WriteLine("SINGLETON");
-            Singleton s1 = Singleton.GetInstance;
+            SingletonSimple s1 = SingletonSimple.GetInstance;
             s1.PrintDetails("From S1");
 
-            Singleton s2 = Singleton.GetInstance;
+            SingletonSimple s2 = SingletonSimple.GetInstance;
             s2.PrintDetails("From s2");
             Console.ReadLine();
 
@@ -28,8 +29,24 @@ namespace Practice.DesignPattern
             Console.WriteLine("SINGLETON LAZY LOADING");
             Parallel.Invoke(() => PrintL1(), () => PrintL2());
             Console.ReadLine();
+            #endregion
+
+            #region SIMPLE FACTORY
+            Console.WriteLine("SIMPLE FACTORY");
+            EmployeeManager employeeManager = new EmployeeManager();
+            IEmployee contractEmployee = employeeManager.GetEmployeeManager(1);
+            contractEmployee.GetBonus();
+            contractEmployee.GetPay();
+            Console.ReadLine();
+
+            IEmployee fullTimeEmployee = employeeManager.GetEmployeeManager(2);
+            fullTimeEmployee.GetBonus();
+            fullTimeEmployee.GetPay();
+            Console.ReadLine();
+            #endregion
         }
 
+        #region SINGLETON
         //SINGLETON THREAD SAFETY
         private static void PrintS1()
         {
@@ -53,5 +70,6 @@ namespace Practice.DesignPattern
             SingletonLazyLoading L2 = SingletonLazyLoading.GetInstance;
             L2.PrintDetails("From Singleton Thread Safety L2");
         }
+        #endregion
     }
 }
