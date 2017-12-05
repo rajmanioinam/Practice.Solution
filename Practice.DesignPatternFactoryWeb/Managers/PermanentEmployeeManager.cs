@@ -16,5 +16,10 @@ namespace Practice.DesignPatternFactoryWeb.Managers
         {
             return 35;
         }
+        
+        public decimal GetHouseAllowance()
+        {
+            return 150;
+        }
     }
 }

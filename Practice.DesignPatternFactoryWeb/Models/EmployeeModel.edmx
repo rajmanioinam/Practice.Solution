@@ -17,6 +17,8 @@
           <Property Name="HourlyPay" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Bonus" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="EmployeeTypeId" Type="int" Nullable="false" />
+          <Property Name="HouseAllownce" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="Employee_Type">
           <Key>
@@ -62,6 +64,8 @@
           <Property Name="Bonus" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="EmployeeTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee_Type" Relationship="PracticeDBModel.FK_Employee_Employee_Type" FromRole="Employee" ToRole="Employee_Type" />
+          <Property Name="HouseAllownce" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="Self.Employee" />
@@ -100,6 +104,8 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="PracticeDBModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="MedicalAllowance" ColumnName="MedicalAllowance" />
+                <ScalarProperty Name="HouseAllownce" ColumnName="HouseAllownce" />
                 <ScalarProperty Name="EmployeeTypeId" ColumnName="EmployeeTypeId" />
                 <ScalarProperty Name="Bonus" ColumnName="Bonus" />
                 <ScalarProperty Name="HourlyPay" ColumnName="HourlyPay" />

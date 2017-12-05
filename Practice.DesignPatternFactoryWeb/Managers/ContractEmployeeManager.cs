@@ -16,5 +16,10 @@ namespace Practice.DesignPatternFactoryWeb.Managers
         {
             return 48;
         }
+
+        public decimal GetMedicalAllowance()
+        {
+            return 100;
+        }
     }
 }

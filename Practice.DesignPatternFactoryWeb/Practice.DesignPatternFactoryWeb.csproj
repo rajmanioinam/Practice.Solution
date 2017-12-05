@@ -152,8 +152,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EmployeesFMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Factory\EmployeeManagerFactory.cs" />
+    <Compile Include="Factory\FactoryMethod\BaseEmployeeFactory.cs" />
+    <Compile Include="Factory\FactoryMethod\ContractEmployeeFactory.cs" />
+    <Compile Include="Factory\FactoryMethod\EmployeeManagerFactory.cs" />
+    <Compile Include="Factory\FactoryMethod\PermanentEmployeeFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -248,8 +253,14 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\EmployeesFM\Create.cshtml" />
+    <Content Include="Views\EmployeesFM\Delete.cshtml" />
+    <Content Include="Views\EmployeesFM\Details.cshtml" />
+    <Content Include="Views\EmployeesFM\Edit.cshtml" />
+    <Content Include="Views\EmployeesFM\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Factory\AbstractFactory\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

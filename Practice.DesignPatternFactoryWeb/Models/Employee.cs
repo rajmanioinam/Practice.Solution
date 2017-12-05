@@ -22,6 +22,8 @@ namespace Practice.DesignPatternFactoryWeb.Models
         public decimal HourlyPay { get; set; }
         public decimal Bonus { get; set; }
         public int EmployeeTypeId { get; set; }
+        public Nullable<decimal> HouseAllownce { get; set; }
+        public Nullable<decimal> MedicalAllowance { get; set; }
     
         public virtual Employee_Type Employee_Type { get; set; }
     }
