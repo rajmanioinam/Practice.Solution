@@ -5,9 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Practice.WebApi.Models;
+using System.Web.Http.Cors;
 
 namespace Practice.WebApi.Controllers
 {
+    //[EnableCorsAttribute("*", "*", "*")]//Enable CORS for the entire API
+    //[RequireHttps]//Enable requires https
     public class EmployeesController : ApiController
     {
         public HttpResponseMessage Get()
@@ -25,6 +28,7 @@ namespace Practice.WebApi.Controllers
                 }
             }
         }
+        [DisableCors]//Disbale CORS for the method
         public HttpResponseMessage Get(int id)
         {
             using (Entities db = new Entities())
