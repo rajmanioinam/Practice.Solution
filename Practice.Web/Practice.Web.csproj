@@ -88,6 +88,7 @@
     <Content Include="Angular\17 - %24http-service.html" />
     <Content Include="Angular\18.html" />
     <Content Include="Angular\WebService\EmployeeService.asmx" />
+    <Content Include="ASP_NET\06-PageLifeCycle.aspx" />
     <Content Include="Components\Images\avocado.jpg" />
     <Content Include="APICALL.html" />
     <Content Include="packages.config" />
@@ -892,6 +893,13 @@
     <Compile Include="Angular\WebService\EmployeeService.asmx.cs">
       <DependentUpon>EmployeeService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\06-PageLifeCycle.aspx.cs">
+      <DependentUpon>06-PageLifeCycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\06-PageLifeCycle.aspx.designer.cs">
+      <DependentUpon>06-PageLifeCycle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

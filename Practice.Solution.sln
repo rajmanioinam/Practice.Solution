@@ -13,9 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DesignPatternSingl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DesignPatternFactoryWeb", "Practice.DesignPatternFactoryWeb\Practice.DesignPatternFactoryWeb.csproj", "{ED141AEE-DA17-401A-AA6A-B92081CC7D9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Bank", "Practice.Bank\Practice.Bank.csproj", "{8D05BE17-83CB-45C0-9465-6783AE0F0B18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice.Bank", "Practice.Bank\Practice.Bank.csproj", "{8D05BE17-83CB-45C0-9465-6783AE0F0B18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.BankTest", "Practice.BankTest\Practice.BankTest.csproj", "{300C2A82-C59C-4C89-AEC7-6D7EF4656402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WebApiTokenAuthentication", "Practice.WebApiTokenAuthentication\Practice.WebApiTokenAuthentication.csproj", "{1E8F480C-3753-4737-B545-F221B8978D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{300C2A82-C59C-4C89-AEC7-6D7EF4656402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{300C2A82-C59C-4C89-AEC7-6D7EF4656402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{300C2A82-C59C-4C89-AEC7-6D7EF4656402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8F480C-3753-4737-B545-F221B8978D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8F480C-3753-4737-B545-F221B8978D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8F480C-3753-4737-B545-F221B8978D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8F480C-3753-4737-B545-F221B8978D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
