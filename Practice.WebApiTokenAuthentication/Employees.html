@@ -9,6 +9,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="well">
             <input type="button" value="Load Employees" id="btnLoadEmployees" class="btn btn-success"/>
+            <input type="button" value="Log Off" id="btnLogOff" class="btn btn-success pull-right"/>
         </div>
         <div id="divEmployee" class="well hidden">
             <table class="table table-bordered" id="tblEmployee">
@@ -73,7 +74,12 @@
                 $('#divError').hide('fade');
             });
 
-            // Save the new user details
+
+            $('#btnLogOff').click(function () {
+                sessionStorage.removeItem('accessToken');
+                window.location.href = 'Login.html';
+            });
+            
             $('#btnLoadEmployees').click(function () {
                 $.ajax({
                     url: '/api/employees',
