@@ -9,6 +9,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="well">
             <input type="button" value="Load Employees" id="btnLoadEmployees" class="btn btn-success"/>
+            <span id="spanUserName" class="text-muted"></span>
             <input type="button" value="Log Off" id="btnLogOff" class="btn btn-success pull-right"/>
         </div>
         <div id="divEmployee" class="well hidden">
@@ -74,6 +75,7 @@
                 $('#divError').hide('fade');
             });
 
+            $('#spanUserName').text(sessionStorage.getItem('userName'));
 
             $('#btnLogOff').click(function () {
                 sessionStorage.removeItem('accessToken');

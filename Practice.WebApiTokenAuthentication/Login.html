@@ -74,6 +74,7 @@
                         //$('#divErrorText').text(JSON.stringify(response));
                         //$('#divError').show('fade');
                         sessionStorage.setItem('accessToken', response.access_token);
+                        sessionStorage.setItem('userName', response.userName);
                         window.location.href = "Employees.html";
                     },
                     error: function (jqXHR) {
