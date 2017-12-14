@@ -14,6 +14,7 @@
                     <tr class="success">
                         <th colspan="2">
                             New User Registration
+                            <a href="Login.html" class="btn btn-success pull-right">Login</a>
                         </th>
                     </tr>
                 </thead>
@@ -110,5 +111,15 @@
             });
         });
     </script>
+    <!--
+    To get and use the bearer token 
+        POST
+        <server path>/Token
+        username=username&password=password&grant_type=password
+
+        GET
+        API path
+        Authorization: Bearer Token
+    -->
 </body>
 </html>
