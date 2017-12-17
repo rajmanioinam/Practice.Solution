@@ -24,7 +24,7 @@ namespace Practice.WebApi
             );
 
             //To enable basic authentication
-            config.Filters.Add(new BasicAuthenticationAttribute());
+            //config.Filters.Add(new BasicAuthenticationAttribute());
 
             //To enable requires https
             //config.Filters.Add(new RequireHttpsAttribute());

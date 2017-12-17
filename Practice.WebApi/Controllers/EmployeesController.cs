@@ -44,6 +44,22 @@ namespace Practice.WebApi.Controllers
                 }
             }
         }
+        [Route("api/Employees/{id}/Employee")]
+        public HttpResponseMessage GetEmployee(int id)
+        {
+            using (Entities db = new Entities())
+            {
+                var entity = db.Employees.SingleOrDefault(x => x.ID == id);
+                if (entity != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employee with id= " + id.ToString() + "not found");
+                }
+            }
+        }
         public HttpResponseMessage Post([FromBody] Employee employee)
         {
             try
