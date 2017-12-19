@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Web", "Practice.Web\Practice.Web.csproj", "{2004DDB5-E2D0-46F8-B4FB-9CC827B1EC81}"
 EndProject
@@ -18,6 +18,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.BankTest", "Practice.BankTest\Practice.BankTest.csproj", "{300C2A82-C59C-4C89-AEC7-6D7EF4656402}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WebApiTokenAuthentication", "Practice.WebApiTokenAuthentication\Practice.WebApiTokenAuthentication.csproj", "{1E8F480C-3753-4737-B545-F221B8978D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.Service", "Practice.WCF.Service\Practice.WCF.Service.csproj", "{92FBDB29-E597-4590-93B7-96CD5052D8DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.ConsoleHost", "Practice.WCF.ConsoleHost\Practice.WCF.ConsoleHost.csproj", "{E8D247C9-8B8C-4AC7-915E-70109F1BF7B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.WindowsAppHost", "Practice.WCF.WindowsAppHost\Practice.WCF.WindowsAppHost.csproj", "{560F6D97-48E7-4A11-9AF8-74AAD0A66732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.WindowsServiceHost", "Practice.WCF.WindowsServiceHost\Practice.WCF.WindowsServiceHost.csproj", "{B0A86B40-BCDD-4790-8A1F-0A702F07DE41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +65,22 @@ Global
 		{1E8F480C-3753-4737-B545-F221B8978D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8F480C-3753-4737-B545-F221B8978D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8F480C-3753-4737-B545-F221B8978D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FBDB29-E597-4590-93B7-96CD5052D8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FBDB29-E597-4590-93B7-96CD5052D8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FBDB29-E597-4590-93B7-96CD5052D8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FBDB29-E597-4590-93B7-96CD5052D8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D247C9-8B8C-4AC7-915E-70109F1BF7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D247C9-8B8C-4AC7-915E-70109F1BF7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D247C9-8B8C-4AC7-915E-70109F1BF7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D247C9-8B8C-4AC7-915E-70109F1BF7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560F6D97-48E7-4A11-9AF8-74AAD0A66732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560F6D97-48E7-4A11-9AF8-74AAD0A66732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560F6D97-48E7-4A11-9AF8-74AAD0A66732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560F6D97-48E7-4A11-9AF8-74AAD0A66732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A86B40-BCDD-4790-8A1F-0A702F07DE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A86B40-BCDD-4790-8A1F-0A702F07DE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A86B40-BCDD-4790-8A1F-0A702F07DE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A86B40-BCDD-4790-8A1F-0A702F07DE41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
