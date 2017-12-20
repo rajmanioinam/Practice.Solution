@@ -13,6 +13,7 @@ namespace Practice.WCF.WindowsServiceHost
 {
     public partial class PracticeWindowsService : ServiceBase
     {
+        //installutil -i path/<applicationame>.exe to install the windows service
         ServiceHost host;
         public PracticeWindowsService()
         {
