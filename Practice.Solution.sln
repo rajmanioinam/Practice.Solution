@@ -52,6 +52,33 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Practice.WCF.WCFWebSiteIISH
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Practice.WCF.MultiContractHost", "Practice.WCF.MultiContractHost\", "{E77AEA09-6D84-47B5-AB39-6C0270FA7FD4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{21dfd956-101a-4042-9bc6-33ee08b657c8}|Practice.WCF.MultiContractService.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65403"
+		Debug.AspNetCompiler.PhysicalPath = "Practice.WCF.MultiContractHost\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65403\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65403"
+		Release.AspNetCompiler.PhysicalPath = "Practice.WCF.MultiContractHost\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65403\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65403"
+		SlnRelativePath = "Practice.WCF.MultiContractHost\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.MultiContractService", "Practice.WCF.MultiContractService\Practice.WCF.MultiContractService.csproj", "{21DFD956-101A-4042-9BC6-33EE08B657C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.MultiContractConsoleHost", "Practice.WCF.MultiContractConsoleHost\Practice.WCF.MultiContractConsoleHost.csproj", "{CF804D06-666B-48B7-A80B-5AB78789E406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +141,18 @@ Global
 		{A08BF5AA-C8B9-4F14-8CEA-920793122223}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A08BF5AA-C8B9-4F14-8CEA-920793122223}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{A08BF5AA-C8B9-4F14-8CEA-920793122223}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E77AEA09-6D84-47B5-AB39-6C0270FA7FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77AEA09-6D84-47B5-AB39-6C0270FA7FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77AEA09-6D84-47B5-AB39-6C0270FA7FD4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77AEA09-6D84-47B5-AB39-6C0270FA7FD4}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{21DFD956-101A-4042-9BC6-33EE08B657C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21DFD956-101A-4042-9BC6-33EE08B657C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21DFD956-101A-4042-9BC6-33EE08B657C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21DFD956-101A-4042-9BC6-33EE08B657C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF804D06-666B-48B7-A80B-5AB78789E406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF804D06-666B-48B7-A80B-5AB78789E406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF804D06-666B-48B7-A80B-5AB78789E406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF804D06-666B-48B7-A80B-5AB78789E406}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
