@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApplicationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionName" Type="varchar" MaxLength="100" />
+          <Property Name="EventName" Type="varchar" MaxLength="100" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fruit">
+          <Key>
+            <PropertyRef Name="FruitId" />
+          </Key>
+          <Property Name="FruitId" Type="int" Nullable="false" />
+          <Property Name="FruitName" Type="varchar" MaxLength="1000" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+          <Property Name="Preference" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="FruitImage" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PracticeDB.dbo.tblcities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblcities">
+          <Key>
+            <PropertyRef Name="cityname" />
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="cityname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="state_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PracticeDB.dbo.tblcountries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblcountries">
+          <Key>
+            <PropertyRef Name="shortname" />
+            <PropertyRef Name="countryname" />
+            <PropertyRef Name="phonecode" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="shortname" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="countryname" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="phonecode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PracticeDB.dbo.tblstates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblstates">
+          <Key>
+            <PropertyRef Name="country_id" />
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="statename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PracticeModelStoreContainer">
+          <EntitySet Name="ApplicationLog" EntityType="Self.ApplicationLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fruit" EntityType="Self.Fruit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblcities" EntityType="Self.tblcities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblcities].[id] AS [id], 
+    [tblcities].[cityname] AS [cityname], 
+    [tblcities].[state_id] AS [state_id]
+    FROM [dbo].[tblcities] AS [tblcities]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblcountries" EntityType="Self.tblcountries" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblcountries].[id] AS [id], 
+    [tblcountries].[shortname] AS [shortname], 
+    [tblcountries].[countryname] AS [countryname], 
+    [tblcountries].[phonecode] AS [phonecode]
+    FROM [dbo].[tblcountries] AS [tblcountries]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblstates" EntityType="Self.tblstates" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblstates].[id] AS [id], 
+    [tblstates].[statename] AS [statename], 
+    [tblstates].[country_id] AS [country_id]
+    FROM [dbo].[tblstates] AS [tblstates]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblcity">
+          <Key>
+            <PropertyRef Name="cityname" />
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="cityname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblcountry">
+          <Key>
+            <PropertyRef Name="shortname" />
+            <PropertyRef Name="countryname" />
+            <PropertyRef Name="phonecode" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="shortname" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="countryname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phonecode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblstate">
+          <Key>
+            <PropertyRef Name="country_id" />
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="statename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblcities" EntityType="Self.tblcity" />
+          <EntitySet Name="tblcountries" EntityType="Self.tblcountry" />
+          <EntitySet Name="tblstates" EntityType="Self.tblstate" />
+          <EntitySet Name="Fruits" EntityType="PracticeModel.Fruit" />
+          <EntitySet Name="ApplicationLogs" EntityType="PracticeModel.ApplicationLog" />
+        </EntityContainer>
+        <EntityType Name="Fruit">
+          <Key>
+            <PropertyRef Name="FruitId" />
+          </Key>
+          <Property Name="FruitId" Type="Int32" Nullable="false" />
+          <Property Name="FruitName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Preference" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="FruitImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ApplicationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EventName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PracticeModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="tblcities">
+            <EntityTypeMapping TypeName="PracticeModel.tblcity">
+              <MappingFragment StoreEntitySet="tblcities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cityname" ColumnName="cityname" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblcountries">
+            <EntityTypeMapping TypeName="PracticeModel.tblcountry">
+              <MappingFragment StoreEntitySet="tblcountries">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="shortname" ColumnName="shortname" />
+                <ScalarProperty Name="countryname" ColumnName="countryname" />
+                <ScalarProperty Name="phonecode" ColumnName="phonecode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblstates">
+            <EntityTypeMapping TypeName="PracticeModel.tblstate">
+              <MappingFragment StoreEntitySet="tblstates">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="statename" ColumnName="statename" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fruits">
+            <EntityTypeMapping TypeName="PracticeModel.Fruit">
+              <MappingFragment StoreEntitySet="Fruit">
+                <ScalarProperty Name="FruitImage" ColumnName="FruitImage" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Preference" ColumnName="Preference" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="FruitName" ColumnName="FruitName" />
+                <ScalarProperty Name="FruitId" ColumnName="FruitId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationLogs">
+            <EntityTypeMapping TypeName="PracticeModel.ApplicationLog">
+              <MappingFragment StoreEntitySet="ApplicationLog">
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

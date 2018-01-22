@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ViewBag And ViewData";
+}
+<h2>Fruits List:</h2>
+<h3>Fruit list from ViewBag:</h3>
+<ul>
+    @foreach(string fruit in ViewBag.Fruits)
+    {
+        <li>@fruit</li>
+    }
+</ul>
+<h3>Fruit list from ViewData:</h3>
+<ul>
+    @foreach(string fruit in (List<string>)ViewData["Fruits"])
+    {
+        <li>@fruit</li>
+    }
+</ul>

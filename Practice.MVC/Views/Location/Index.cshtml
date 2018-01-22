@@ -1,0 +1,64 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@model IPagedList<Practice.MVC.Models.tblcountry>
+
+@{
+    ViewBag.Title = "Countries";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<h2>Countries</h2>
+
+<h3>Country Name:</h3>
+
+@using (Html.BeginForm("Index", "Location", FormMethod.Get))
+{
+    @Html.TextBox("search", "", htmlAttributes: new { @class = "form-control" })
+    <input type="submit" value="search" class="btn btn-default" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().shortname)
+        </th>
+        <th>
+            @Html.ActionLink("Country Name","index", new { sortOrder = ViewBag.NameSort, search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().phonecode)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.shortname, "GetStates", new
+                {
+                    id = item.id
+                })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.countryname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phonecode)
+            </td>
+        </tr>
+    }
+    @if(Model.Count()==0)
+    {
+        <tr>
+            <td colspan="3">No records to display.</td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }),
+    new PagedListRenderOptions()
+    {
+        Display = PagedListDisplayMode.IfNeeded,
+        DisplayPageCountAndCurrentLocation = true,
+        DisplayItemSliceAndTotal = true
+    })

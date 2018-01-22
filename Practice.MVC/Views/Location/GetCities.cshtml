@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Practice.MVC.Models.tblcity>
+@using  Practice.MVC.Models
+@{
+    ViewBag.Title = "Cities";
+}
+
+<h2>Cities</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cityname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state_id)
+            
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cityname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state_id)
+        </td>
+    </tr>
+}
+
+</table>

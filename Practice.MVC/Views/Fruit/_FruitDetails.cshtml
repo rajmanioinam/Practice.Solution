@@ -1,0 +1,10 @@
+﻿@model Practice.MVC.Models.Fruit
+@using Practice.MVC.CustomHtmlHelpers
+<tr>
+    <td>
+        @Model.FruitName
+    </td>
+    <td>
+        @Html.Image(Url.Content(Model.FruitImage),Model.FruitName)
+    </td>
+</tr>

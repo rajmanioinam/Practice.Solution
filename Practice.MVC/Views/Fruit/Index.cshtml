@@ -1,0 +1,106 @@
+﻿@using Practice.MVC.CustomHtmlHelpers;
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<Practice.MVC.Models.Fruit>
+
+@{
+    ViewBag.Title = "Fruits";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<h2>Fruits</h2>
+@using (Html.BeginForm("Index", "Fruit", FormMethod.Get))
+{
+    <b>Fruit Name:</b>
+    @Html.TextBox("Search", "", htmlAttributes: new { @class = "form-control" })
+    <input type="submit" value="Search" class="btn btn-default" />
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }),
+    new PagedListRenderOptions() {
+        Display = PagedListDisplayMode.IfNeeded,
+        DisplayPageCountAndCurrentLocation =true,
+        DisplayItemSliceAndTotal = true })
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().FruitId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().FruitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Preference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().UpdatedDate)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        var imageSource = item.FruitImage == null ? "" : Url.Content(item.FruitImage);
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FruitId)
+            </td>
+            <td>
+                @Html.Raw(item.FruitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedDate)
+            </td>
+            <td>
+                @Html.Image(item.FruitImage, item.FruitName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FruitId }) |
+                @Html.ActionLink("Details", "FruitDetails", new { id = item.FruitId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FruitId })
+            </td>
+        </tr>
+    }
+
+</table>
+<h2>Partial view rendered using html.Partial. Return type MvcHtmlString, can be assigned to a variable and manipulated.</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().FruitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().FruitImage)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_FruitDetails", item)
+    }
+</table>
+<h2>Partial view rendered using html.renderpartial. Return type void, output written directly to the output stream. Faster compared to html.partial</h2>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.First().FruitName)</th>
+        <th>@Html.DisplayNameFor(model => model.First().FruitImage)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        { Html.RenderPartial("_FruitDetails", item); }
+    }
+</table>

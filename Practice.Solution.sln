@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.MultiContractS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.WCF.MultiContractConsoleHost", "Practice.WCF.MultiContractConsoleHost\Practice.WCF.MultiContractConsoleHost.csproj", "{CF804D06-666B-48B7-A80B-5AB78789E406}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.MVC", "Practice.MVC\Practice.MVC.csproj", "{656D7DA5-6F68-4B7C-A58A-A6D38448646B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{CF804D06-666B-48B7-A80B-5AB78789E406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF804D06-666B-48B7-A80B-5AB78789E406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF804D06-666B-48B7-A80B-5AB78789E406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656D7DA5-6F68-4B7C-A58A-A6D38448646B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656D7DA5-6F68-4B7C-A58A-A6D38448646B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656D7DA5-6F68-4B7C-A58A-A6D38448646B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656D7DA5-6F68-4B7C-A58A-A6D38448646B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

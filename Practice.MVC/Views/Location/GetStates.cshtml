@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Practice.MVC.Models.tblstate>
+
+@{
+    ViewBag.Title = "States";
+}
+
+<h2>States</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.statename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country_id)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.statename,"GetCities",new { id=item.id})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country_id)
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to Country List", "Index")

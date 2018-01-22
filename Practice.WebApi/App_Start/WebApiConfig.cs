@@ -30,7 +30,7 @@ namespace Practice.WebApi
             //config.Filters.Add(new RequireHttpsAttribute());
 
             //To enable CORS for the entire applciation
-            //EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            //EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");//origins, headers, methods
             config.EnableCors();
 
             //To enable JSONP

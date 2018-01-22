@@ -1,0 +1,44 @@
+﻿@model Practice.MVC.Models.Fruit
+
+@{
+    ViewBag.Title = "Fruit Details";
+}
+
+<h2>Fruit Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FruitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FruitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model=> model.UpdatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=>model.UpdatedDate)
+        </dd>
+    </dl>
+    @Html.ActionLink("Back to list", "Index")|
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FruitId })
+</div>
+
