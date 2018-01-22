@@ -30,7 +30,7 @@ namespace Practice.MVC.Controllers
         [TrackActionExecution]
         public ActionResult FruitDetails(int Id)
         {
-            throw new Exception("testing exception");
+            //throw new Exception("testing exception");
             Fruit fruit = db.Fruits.Single(f => f.FruitId == Id);
             return View(fruit);
         }
