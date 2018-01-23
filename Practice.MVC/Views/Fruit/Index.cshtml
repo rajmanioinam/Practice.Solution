@@ -9,6 +9,14 @@
     ViewBag.Title = "Fruits";
 }
 <link href="~/Content/PagedList.css" rel="stylesheet" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Search').autocomplete({
+            source: '@Url.Action("GetFruits")'
+        });
+    });
+</script>
+
 <h2>Fruits</h2>
 @using (Html.BeginForm("Index", "Fruit", FormMethod.Get))
 {
@@ -20,10 +28,12 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }),
-    new PagedListRenderOptions() {
+    new PagedListRenderOptions()
+    {
         Display = PagedListDisplayMode.IfNeeded,
-        DisplayPageCountAndCurrentLocation =true,
-        DisplayItemSliceAndTotal = true })
+        DisplayPageCountAndCurrentLocation = true,
+        DisplayItemSliceAndTotal = true
+    })
 <table class="table">
     <tr>
         <th>

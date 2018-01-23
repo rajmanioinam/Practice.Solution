@@ -161,5 +161,11 @@ namespace Practice.MVC.Controllers
         {
             return Json(!db.Fruits.Any(x => x.FruitName == FruitName), JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetFruits(string term)
+        {
+            List<string> fruits = db.Fruits.Where(f => f.FruitName.StartsWith(term)).Select(s=>s.FruitName).ToList();
+            return Json(fruits, JsonRequestBehavior.AllowGet);
+        }
     }
 }
