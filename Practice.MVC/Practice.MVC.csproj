@@ -165,6 +165,7 @@
     <Compile Include="CustomHtmlHelpers\CustomHtmlHelpers.cs" />
     <Compile Include="CustomValidators\CurrentDateAttribute.cs" />
     <Compile Include="CustomValidators\DateRangeAttribute.cs" />
+    <Compile Include="CustomValidators\RemoteClientServerAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -27,6 +27,7 @@ namespace Practice.MVC.Controllers
             List<Fruit> fruits = db.Fruits.Where(f => f.FruitName.StartsWith(search) || search == null).ToList();
             return View(fruits.ToPagedList(page ?? 1, 2));
         }
+
         [TrackActionExecution]
         public ActionResult FruitDetails(int Id)
         {
@@ -34,11 +35,13 @@ namespace Practice.MVC.Controllers
             Fruit fruit = db.Fruits.Single(f => f.FruitId == Id);
             return View(fruit);
         }
+
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+
         /// <summary>
         /// Using FormCollection. Deprecated approach
         /// </summary>
@@ -83,6 +86,7 @@ namespace Practice.MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Fruit fruit = db.Fruits.Find(id);
+            fruit.ConfirmColor = fruit.Color;
             if(fruit==null)
             {
                 return HttpNotFound();
@@ -101,7 +105,7 @@ namespace Practice.MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var fruitToUpdate = db.Fruits.Find(id);
-            if(TryUpdateModel(fruitToUpdate,"", new string[] { "FruitId","FruitName","Color","Preference","UpdatedDate"}))
+            if(TryUpdateModel(fruitToUpdate,"", new string[] { "FruitId","FruitName","Color","ConfirmColor","Preference","UpdatedDate"}))
             {
                 try
                 {
@@ -141,6 +145,7 @@ namespace Practice.MVC.Controllers
             }
             return View(fruit);
         }
+
         [HttpPost,ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult Delete_Post(int? id)
@@ -149,6 +154,12 @@ namespace Practice.MVC.Controllers
             db.Fruits.Remove(fruit);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        public JsonResult IsFruitNameAvailable(string FruitName)
+        {
+            return Json(!db.Fruits.Any(x => x.FruitName == FruitName), JsonRequestBehavior.AllowGet);
         }
     }
 }
