@@ -20,29 +20,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("India", "Index", "Home", new { area = "India" }, null)</li>
-                    <li>@Html.ActionLink("USA", "Index", "Home", new { area = "USA" }, null)</li>
-                    <li>@Html.ActionLink("Administration", "Index", "Home", new { area = "Administration" }, null)</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>
-                        @{
-                            if (Request.IsAuthenticated)
-                            {
+                    @{
+                        if (Request.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("India", "Index", "Home", new { area = "India" }, null)</li>
+                            <li>@Html.ActionLink("USA", "Index", "Home", new { area = "USA" }, null)</li>
+                            <li>@Html.ActionLink("Administration", "Index", "Home", new { area = "Administration" }, null)</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>
                                 @Html.ActionLink("Logout", "Logout", "Login")
-                                using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
-                                {
-
-                                    @*<a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>*@
-                                }
-                            }
-                            else
-                            {
-                                @Html.ActionLink("Login", "Login", "Login")
-                            }
+                            </li>
                         }
-                    </li>
+                        else
+                        {
+                            <li>@Html.ActionLink("Login", "Login", "Login")</li>
+                        }
+                    }
+
                 </ul>
             </div>
         </div>
