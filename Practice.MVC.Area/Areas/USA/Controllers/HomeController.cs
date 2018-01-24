@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Practice.MVC.Area.Areas.USA.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: USA/Home

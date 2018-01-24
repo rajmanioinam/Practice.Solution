@@ -26,6 +26,23 @@
                     <li>@Html.ActionLink("Administration", "Index", "Home", new { area = "Administration" }, null)</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        @{
+                            if (Request.IsAuthenticated)
+                            {
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                                using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+
+                                    @*<a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>*@
+                                }
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Login", "Login", "Login")
+                            }
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

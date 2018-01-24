@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Practice.MVC.Area.Areas.Administration.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Administration/Home

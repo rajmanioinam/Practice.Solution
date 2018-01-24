@@ -21,7 +21,7 @@ namespace Practice.MVC.Models
         //[Required]
         //[System.Web.Mvc.AllowHtml]
         //[System.Web.Mvc.Remote("IsFruitNameAvailable", "Fruit", ErrorMessage ="Fruit Name already in use.(Client validation)")]//Client side validation. Requires javascript enable in browser.
-        [RemoteClientServer("IsFruitNameAvailable", "Fruit", ErrorMessage = "Fruit Name already in use. (server validation)")]
+        //[RemoteClientServer("IsFruitNameAvailable", "Fruit", ErrorMessage = "Fruit Name already in use. (server validation)")]
         public string FruitName { get; set; }
 
         [StringLength(50,MinimumLength = 3)]
