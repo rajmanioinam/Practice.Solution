@@ -9,8 +9,9 @@ using System.Web.Http.Cors;
 
 namespace Practice.WebApi.Controllers
 {
-    //[EnableCorsAttribute("*", "*", "*")]//Enable CORS for the entire API
+    //[EnableCorsAttribute("*", "*", "*")]
     //[RequireHttps]//Enable requires https
+    //[BasicAuthentication]
     public class EmployeesController : ApiController
     {
         public HttpResponseMessage Get()

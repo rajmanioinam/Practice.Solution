@@ -23,15 +23,19 @@ namespace Practice.WebApi
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            //To enable basic authentication
+            //To enable basic authentication for the entire web api
             //config.Filters.Add(new BasicAuthenticationAttribute());
 
-            //To enable requires https
+            //To enable requires https for the entire web api
             //config.Filters.Add(new RequireHttpsAttribute());
 
             //To enable CORS for the entire applciation
             //EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");//origins, headers, methods
-            config.EnableCors();
+            //config.EnableCors(cors);//Enable CORS for the entire web api
+            config.EnableCors();//Having only this line prepare the Web API to enable CORS. CORS can be enables at each API method.
+
+            //To return JSON instead of xml when requested from browser
+            //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
 
             //To enable JSONP
             //var jsonFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
