@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Checkbox Group</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var resultString = "";
+                var chkFruits = $('input[name="Fruits"]:checked');
+                var chkCountries = $('input[name="Country"]:checked');
+                if (chkFruits.length > 0) {
+                    resultString += chkFruits.length + ' fruits selected. <br/>';
+                    chkFruits.each(function () {
+                        var selectedValue = $(this).val();
+                        resultString += selectedValue + '-' + $('label[for="option-' + selectedValue + '"]').text()  + '<br/>';
+                    });
+                }
+                else {
+                    resultString += 'No Fruits selected. <br />';
+                }
+                if (chkCountries.length > 0) {
+                    resultString += chkCountries.length + ' countries selected. <br/>';
+                    chkCountries.each(function () {
+                        resultString += $(this).val() + '<br/>';
+                    });
+                }
+                else {
+                    resultString += 'No countries selected.';
+                }
+                $('#divResult').html(resultString);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Checkbox Group</h2>
+    <div>
+        Fruits:
+        <input type="checkbox" name="Fruits" value="Apple" /><label for="option-Apple">Apple 1</label> 
+        <input type="checkbox" name="Fruits" value="Banana" /><label for="option-Banana">Banana 2</label>
+        <input type="checkbox" name="Fruits" value="Citrous" /><label for="option-Citrous">Citrous 3</label>
+    </div>
+    <div>
+        Countries:
+        <input type="checkbox" name="Country" value="India" />India
+        <input type="checkbox" name="Country" value="USA" />USA
+        <input type="checkbox" name="Country" value="Canada" />Canada
+    </div>
+    <input type="button" value="Submit" id="btnSubmit" />
+    <div id="divResult"></div>
+</body>
+</html>

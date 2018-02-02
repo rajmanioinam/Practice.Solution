@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Class selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnEven').click(function () {
+                $('.even').toggle();
+            });
+            $('#btnOdd').click(function () {
+                $('div.odd').toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>To select HTML element by class use $(.class) selector.</div><br />
+    <input type="button" id="btnEven" value="Toggle Even class"/><input type="button" id="btnOdd" value="Toggle Odd class"/>
+    <div class="odd">1 - Odd</div><br />
+    <div class="even">2 - Even</div><br />
+    <div class="odd">3 - Odd</div><br />
+    <div class="even">4 - Even</div>
+</body>
+</html>

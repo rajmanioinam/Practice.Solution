@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Input selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                $('input').each(function () {
+                    alert($(this).val());
+                });
+            });
+
+            $('#btnSubmit1').click(function () {
+                $(':input').each(function () {
+                    alert($(this).val());
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>$('input') selects only the HTML elements with tag input. $(':input') scans and selects all the input type HTML elements</div>
+    First Name : <input type="text" value="John" />
+    <br /><br />
+    Last Name : <input type="text" value="Major" />
+    <br /><br />
+    Gender :
+    <input type="radio" name="gender" checked="checked" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <br /><br />
+    Skills :
+    <input type="checkbox" name="skills" checked="checked"
+           value="JavaScript" />JavaScript
+    <input type="checkbox" name="skills" checked="checked"
+           value="jQuery" />jQuery
+    <input type="checkbox" name="skills" value="C#" />C#
+    <br /><br />
+    Country:
+    <select>
+        <option selected="selected" value="USA">USA</option>
+        <option value="India">India</option>
+        <option value="UK">UK</option>
+    </select>
+    <br /><br />
+    Summary :
+    <br />
+    <textarea>
+        I am a Senior Dot Net Developer with 10 years experience
+    </textarea>
+    <br /><br />
+    <input type="submit" value="input selector" id="btnSubmit" />
+    <input type="submit" value=":input selector" id="btnSubmit1" />
+</body>
+</html>

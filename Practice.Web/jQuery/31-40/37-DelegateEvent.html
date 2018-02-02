@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul').delegate('li', 'click', function () {
+                alert($(this).text());
+            });
+            $('#btnUndelegate').click(function () {
+                $('ul').undelegate('li', 'click');
+            });
+            $('#btnAdd').click(function () {
+                $('ul').append('<li>New ELement</li>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Delegate Event</h2>
+    <input type="button" value="un-delegate" id="btnUndelegate"/>
+    <br/>
+    <input type="button" value="Add new element" id="btnAdd" />
+    <ul>
+        <li>Element</li>
+    </ul>
+</body>
+</html>

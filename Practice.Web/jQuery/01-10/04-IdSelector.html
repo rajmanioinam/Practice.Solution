@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery ID Selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                alert('Text retieved using #id selector: ' + $('#txtSample').val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>To find an HTML element by ID, use jQuery #id selector.</div><br />
+    <input type="text" id="txtSample"/><input type="button" id="btnSubmit" value="Submit"/>
+</body>
+</html>

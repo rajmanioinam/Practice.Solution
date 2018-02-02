@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Map</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jqObject = {
+                'Name': 'Json',
+                'Type': 'JS Library',
+                'Target': 'UI'
+            };
+            var result = '';
+            $('li').map(function (index, element) {
+                result += $(element).text() + '<br/>';
+            });
+
+            $('#divResult').html(result);
+
+            var result1 = $.map(jqObject, function (element, index) {
+                return $(element).text();
+            }).get().join('||');
+            $('#divResult1').html(result1);
+        });
+    </script>
+</head>
+<body>
+    <h2>Map</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <h3>using JQ Map</h3>
+    <div id="divResult"></div>
+    <div id="divResult1"></div>
+</body>
+</html>

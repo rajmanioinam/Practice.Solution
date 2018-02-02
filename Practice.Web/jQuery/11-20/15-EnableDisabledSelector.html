@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Enable-Disabled Selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(':disabled').css('border', 'solid red');
+            $(':enabled').css('border', 'solid green');
+        });
+    </script>
+</head>
+<body>
+    <h2>Enable-Disabled Selector</h2>
+    <div>Sample 1:
+        <div><input type="text" value="Sample 1" disabled="disabled"/></div>
+    </div>
+    <div>Sample 2:
+        <div><input type="text" value="Sample 2"/></div>
+    </div>
+    <div>Sample 3:
+        <div><textarea>Sample 3</textarea></div>
+    </div>
+    <div>Sample 4:
+        <div><textarea disabled="disabled">Sample 4</textarea></div>
+    </div>
+</body>
+</html>

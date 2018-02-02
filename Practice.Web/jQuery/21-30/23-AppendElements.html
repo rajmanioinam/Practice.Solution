@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Append Elements</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnAppend').click(function () {
+                $('div').append('<div> Tutorial</div>');
+            });
+            $('#btnAppendTo').click(function () {
+                $('<div> Programming</div>').appendTo('div');
+            });
+            $('#btnPrepend').click(function () {
+                $('div').prepend('<div>Learn </div>');
+            });
+            $('#btnPrependTo').click(function () {
+                $('<div>Begin </div>').prependTo('div');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Append Prepend Elements</h2>
+    <input type="button" value="Append" id="btnAppend"/>
+    <input type="button" value="AppenTo" id="btnAppendTo" />
+    <input type="button" value="Prepend" id="btnPrepend" />
+    <input type="button" value="PrependTo" id="btnPrependTo" /><br />
+    <div id="jq">JQuery</div>
+    <div id="net">.NET</div>
+    <div id="sql">SQL</div>
+</body>
+</html>

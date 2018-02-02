@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Which Mouse Button</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').mouseup(function (event) {
+                switch (event.which) {
+                    case 1:
+                        whichButton = 'Left button';
+                        break;
+                    case 2:
+                        whichButton = 'Middle button';
+                        break;
+                    case 3:
+                        whichButton = 'Right button';
+                        break;
+                    default:
+                        whichButton = 'Invalid';
+                        break;
+                };
+                $('#divResult').html(whichButton);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Which Mouse Button</h2>
+    <input type="button" value="Submit" id="btnSubmit" />
+    <div id="divResult"></div>
+</body>
+</html>

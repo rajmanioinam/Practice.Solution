@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Selected Selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var selectedCountry = $('#ddlCountry option:selected');
+                var selectedStates = $('#msStates option:selected');
+                var resultString = '';
+                if (selectedCountry.length > 0) {
+                    resultString += selectedCountry.val() + '<br/>';
+                }
+                else {
+                    resultString += 'No country selected. <br/>'; 
+                }
+                if (selectedStates.length > 0) {
+                    selectedStates.each(function () {
+                        resultString += $(this).val() + '<br />';
+                    });
+                }
+                else {
+                    resultString += 'No States selected.';
+                }
+                $('#divResult').html(resultString);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Selected Selector</h2>
+    <div>
+        Drop Down List
+        <div>
+            <select id="ddlCountry">
+                <option value="IND" selected="selected">India</option>
+                <option value="USA">USA</option>
+                <option value="CA">Canada</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        Multi-Select List
+        <div>
+            <select id="msStates" multiple="multiple">
+                <option value="PA">Pensylvania</option>
+                <option value="NJ">New Jersey</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+    </div>
+    <input type="button" value="Submit" id="btnSubmit"/>
+    <div id="divResult"></div>
+</body>
+</html>

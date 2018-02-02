@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Event Object</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function (event) {
+                //var e = $.event.fix(event);
+                var result = 'Event Type: ' + event.type + '<br/>'
+                    + 'Event PageX: ' + event.pageX + '<br/>'
+                    + 'Event PageY: ' + event.pageY + '<br/>'
+                    + 'Event Target Type: ' + event.target.type + '<br/>'
+                    + 'Event Target Tagname: ' + event.target.tagName;
+                $('#divResult').html(result);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Event Object</h2>
+    <input type="button" value="Submit" id="btnSubmit" />
+    <div id="divResult"></div>
+</body>
+</html>

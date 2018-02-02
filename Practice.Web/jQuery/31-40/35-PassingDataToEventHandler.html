@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').on('click', {
+                'FN': 'John',
+                'LN': 'Doe'
+            }, DoSomething);
+            function DoSomething(event) {
+                if (event.data == null) {
+                    $('#divResult').html('No data');
+                }
+                else {
+                    $('#divResult').html(event.data.FN + ' ' + event.data.LN);
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <h2>Passing data to event handler</h2>
+    <input type="button" value="Submit" id="btnSubmit"/>
+    <div id="divResult"></div>
+</body>
+</html>

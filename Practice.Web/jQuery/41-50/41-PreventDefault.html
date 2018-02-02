@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(this).on('contextmenu', function (e) {
+                e.preventDefault();
+                $('#divResult').append('Right click disabled<br/>')
+            });
+            $('#myLink').on('click', function (e) {
+                e.preventDefault();
+                $('#divResult').append('link disabled <br/>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <a id="myLink" href="http://www.google.com">Google</a>
+    <input type="password" />
+    <div id="divResult"></div>
+</body>
+</html>

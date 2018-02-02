@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Each</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jqObject = {
+                'Name': 'Json',
+                'Type': 'JS Library',
+                'Target': 'UI'
+            };
+
+            var result = 'Countries: ';
+            $('li').each(function (i, element) {
+                result += $(element).text() + ' ';
+            })
+            $('#divEach').html(result);
+            var result1 = '';
+            $.each(jqObject, function (key, value) {
+                result1 += key + ' - ' + value + '<br/>'
+            });
+            $('#divJQEach').html(result1);
+        });
+    </script>
+</head>
+<body>
+    <h2>$.each and .each</h2>
+    <ul>
+        <li>USA</li>
+        <li>India</li>
+        <li>Canada</li>
+    </ul>
+    <h3>.each - from li</h3>
+    <div id="divEach"></div>
+    <h3>$.each - from JSON Object</h3>
+    <div id="divJQEach"></div>
+</body>
+</html>

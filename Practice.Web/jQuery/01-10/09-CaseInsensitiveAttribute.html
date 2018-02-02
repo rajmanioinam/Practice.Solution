@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Case In-sensitive attribute</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('div[title="divtitle"]').css('border', 'solid black');
+            $('div[title]').filter(function () {
+                return $(this).attr('title').toLowerCase() == 'divtitle';
+            }).css('border', 'solid black');
+
+            //$('div[title*="divcontain"]').css('border', 'solid blue');
+            $('div[title]').filter(function () {
+                return (/DivContain/i).test($(this).attr('title'));
+            }).css('border', 'solid blue');
+
+            $('div[title]').filter(function () {
+                return RegExp('Div1Contain', 'i').test($(this).attr('title'));
+            }).css('border', 'solid green');
+        });
+    </script>
+</head>
+<body>
+    <div title="DivTitle">DivTitle</div><br />
+    <div title="divTitle">divTitle</div><br />
+    <div title="Divtitle">Divtitle</div><br />
+    <div title="divtitle">divtitle</div><br /><br />
+
+    <div title="DivContainTitle1">DivContainTitle1</div><br />
+    <div title="divContainTitle2">divContainTitle2</div><br />
+    <div title="Divcontaintitle3">Divcontaintitle3</div><br />
+    <div title="divcontaintitle4">divcontaintitle4</div><br /><br />
+
+    <div title="Div1ContainTitle1">DivContainTitle1</div><br />
+    <div title="div1ContainTitle2">divContainTitle2</div><br />
+    <div title="Div1containtitle3">Divcontaintitle3</div><br />
+    <div title="div1containtitle4">divcontaintitle4</div>
+</body>
+</html>

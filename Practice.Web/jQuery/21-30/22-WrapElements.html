@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Wrap Element</title>
+    <style>
+        .contentDiv{
+            border: solid green;
+        }
+        .wrapperDiv{
+            border: dotted blue;
+        }
+        .wrapperAll{
+            border: double red;
+        }
+        .wrapperInner{
+            border: dashed black;
+        }
+    </style>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div').wrap('<div class="wrapperDiv">Wapper Div</div>')
+            $('#btnUnwrap').click(function () {
+                $('div').unwrap();
+            });
+            $('#btnWrapAll').click(function () {
+                $('div').wrapAll('<div class="wrapperAll">Wrap All</div>');
+            });
+            $('#btnWrapInner').click(function () {
+                $('div').wrapInner('<div class="wrapperInner">Wrap Inner</div>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Wrap Element</h2>
+    <input type="button" value="UnWrap" id="btnUnwrap" />
+    <input type="button" value="Wrap All" id="btnWrapAll" />
+    <input type="button" value="Wrap Inner" id="btnWrapInner" />
+    <br />
+    <div class="contentDiv">Sample Value 1</div><br />
+    <div class="contentDiv">Sample value 2</div>
+</body>
+</html>

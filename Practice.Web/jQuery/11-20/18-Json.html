@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSON</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //JSON Object
+            var Fruit = {
+                'Name': 'Avocado',
+                'Color': 'Green',
+                'Cost': '$$'
+            };
+            var Employee = [{
+                'Name': 'Jon',
+                'Location': 'Phoenix',
+                'Department': 'Mobility'
+            },
+            {
+                'Name': 'Lee',
+                'Location': 'Philadelphia',
+                'Department': 'IT-Infra'
+                }];
+            //JSON String
+            var EmployeeJsonString = '[{"Name": "Jon", "Location": "Phoenix", "Department": "Mobility"},{"Name": "Lee", "Location": "Philadelphia", "Department": "IT-Infra"}]';
+
+            var FruitHTML = '';
+            FruitHTML += 'Name: ' + Fruit.Name + '<br/>';
+            FruitHTML += 'Color: ' + Fruit.Color + '<br/>';
+            FruitHTML += 'Cost: ' + Fruit.Cost;
+            $('#divFromJsonObject').html(FruitHTML);
+
+            var EmployeeHTML = '';
+            $.each(Employee, function (i,item) {
+                EmployeeHTML += 'Name: ' + item.Name + '<br/>';
+                EmployeeHTML += 'Location: ' + item.Location + '<br/>';
+                EmployeeHTML += 'Department: ' + item.Department + '<br/><br/>';
+            });
+            $('#divFromJsonArray').html(EmployeeHTML);
+            $('#divJsonString').html(JSON.stringify(Employee));
+
+            var EmployeeJson = JSON.parse(EmployeeJsonString);
+            var EmployeeJsonHtml = '';
+            $.each(EmployeeJson, function (i, item) {
+                EmployeeJsonHtml += 'Name: ' + item.Name + '<br/>';
+                EmployeeJsonHtml += 'Location: ' + item.Location + '<br/>';
+                EmployeeJsonHtml += 'Department: ' + item.Department + '<br/><br/>';
+            });
+            $('#divFromJsonString').html(EmployeeJsonHtml);
+        });
+    </script>
+</head>
+<body>
+    <h2>JSON</h2>
+    <h3>From JSON Object</h3>
+    <div id="divFromJsonObject"></div>
+    <h3>From JSON array</h3>
+    <div id="divFromJsonArray"></div>
+    <div id="divJsonString"></div>
+    <h3>From JSON string</h3>
+    <div id="divFromJsonString"></div>
+</body>
+</html>

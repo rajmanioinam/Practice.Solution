@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>On Events</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').on('click mouseenter mouseleave', function (event) {
+                if (event.type == 'click') {
+                    $('#divResult').html('Click event fired');
+                }
+                else if (event.type == 'mouseenter') {
+                    $('#divResult').html('Mouse enter event fired');
+                }
+                else {
+                    $('#divResult').html('Mouse leave event fired');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>On Events</h2>
+    <input type="button" value="Submit" id="btnSubmit"/>
+    <div id="divResult"></div>
+</body>
+</html>

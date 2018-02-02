@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Change</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').change(function () {
+                $('#divResult').html($(this).val() + ' selected');
+            });
+            $('#countries').change(function () {
+                var selectedValue = $(this).val();
+                if (selectedValue == 'select') {
+                    selectedValue = 'Please select country';
+                }
+                $('#divResult').html(selectedValue + ' selected');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>jQuery Change Events</h2>
+    Fruits:
+    <input type="radio" name="fruit" value="Apple"/>Apple
+    <input type="radio" name="fruit" value="Banana"/>Banana
+    <br/>
+    Country: 
+    <select id="countries">
+        <option value="select">Select</option>
+        <option value="IND">India</option>
+        <option value="USA">USA</option>
+        <option value="CA">Canada</option>
+    </select>
+    <div id="divResult"></div>
+</body>
+</html>

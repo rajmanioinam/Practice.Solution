@@ -89,8 +89,46 @@
     <Content Include="Angular\18.html" />
     <Content Include="Angular\WebService\EmployeeService.asmx" />
     <Content Include="ASP_NET\06-PageLifeCycle.aspx" />
+    <Content Include="ASP_NET\DotNetBasic\AbstractExample.aspx" />
+    <Content Include="ASP_NET\DotNetBasic\DelegatesExample.aspx" />
+    <Content Include="ASP_NET\DotNetBasic\ExtendedMethods.aspx" />
+    <Content Include="ASP_NET\DotNetBasic\InheritanceExample.aspx" />
     <Content Include="Components\Images\avocado.jpg" />
     <Content Include="APICALL.html" />
+    <Content Include="jQuery\01-10\01-WhatIsJQuery.html" />
+    <Content Include="jQuery\01-10\02-DocumentReady.html" />
+    <Content Include="jQuery\01-10\04-IdSelector.html" />
+    <Content Include="jQuery\01-10\05-ElementSelector.html" />
+    <Content Include="jQuery\01-10\06-ClassSelector.html" />
+    <Content Include="jQuery\01-10\07-AttributeSelector.html" />
+    <Content Include="jQuery\01-10\08-AttributeValueSelector.html" />
+    <Content Include="jQuery\01-10\09-CaseInsensitiveAttribute.html" />
+    <Content Include="jQuery\01-10\10-InputSelector.html" />
+    <Content Include="jQuery\11-20\11-CheckedSelector.html" />
+    <Content Include="jQuery\11-20\12-CheckboxGroup.html" />
+    <Content Include="jQuery\11-20\14-SelectedSelector.html" />
+    <Content Include="jQuery\11-20\15-EnableDisabledSelector.html" />
+    <Content Include="jQuery\11-20\16-EachFunction.html" />
+    <Content Include="jQuery\11-20\17-MethodChaining.html" />
+    <Content Include="jQuery\11-20\18-Json.html" />
+    <Content Include="jQuery\11-20\20-JsonStringToDotNetObject.aspx" />
+    <Content Include="jQuery\21-30\21-DomManipulationMethods.html" />
+    <Content Include="jQuery\21-30\22-WrapElements.html" />
+    <Content Include="jQuery\21-30\23-AppendElements.html" />
+    <Content Include="jQuery\21-30\26-Each.html" />
+    <Content Include="jQuery\21-30\27-Map.html" />
+    <Content Include="jQuery\21-30\29-Change.html" />
+    <Content Include="jQuery\21-30\30-MouseEvents.html" />
+    <Content Include="jQuery\31-40\31-EventObjects.html" />
+    <Content Include="jQuery\31-40\32-WhichMouseButton.html" />
+    <Content Include="jQuery\31-40\33-BindEvents.html" />
+    <Content Include="jQuery\31-40\34-OnEvent.html" />
+    <Content Include="jQuery\31-40\35-PassingDataToEventHandler.html" />
+    <Content Include="jQuery\31-40\36-AddEventHandlerToDynamicallyCreatedElements.html" />
+    <Content Include="jQuery\31-40\37-DelegateEvent.html" />
+    <Content Include="jQuery\31-40\39-ExecuteEventOnce.html" />
+    <Content Include="jQuery\31-40\40-CheckIfEventAlreadyBound.html" />
+    <Content Include="jQuery\41-50\41-PreventDefault.html" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -901,11 +939,54 @@
     <Compile Include="ASP_NET\06-PageLifeCycle.aspx.designer.cs">
       <DependentUpon>06-PageLifeCycle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\AbstractExample.aspx.cs">
+      <DependentUpon>AbstractExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\AbstractExample.aspx.designer.cs">
+      <DependentUpon>AbstractExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\DelegatesExample.aspx.cs">
+      <DependentUpon>DelegatesExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\DelegatesExample.aspx.designer.cs">
+      <DependentUpon>DelegatesExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\ExtendedMethods.aspx.cs">
+      <DependentUpon>ExtendedMethods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\ExtendedMethods.aspx.designer.cs">
+      <DependentUpon>ExtendedMethods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\InheritanceExample.aspx.cs">
+      <DependentUpon>InheritanceExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP_NET\DotNetBasic\InheritanceExample.aspx.designer.cs">
+      <DependentUpon>InheritanceExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jQuery\11-20\20-JsonStringToDotNetObject.aspx.cs">
+      <DependentUpon>20-JsonStringToDotNetObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jQuery\11-20\20-JsonStringToDotNetObject.aspx.designer.cs">
+      <DependentUpon>20-JsonStringToDotNetObject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular2\" />
+    <Folder Include="AngularComponents\" />
+    <Folder Include="AngularCRUD\" />
     <Folder Include="Components\Scripts\" />
-    <Folder Include="jQuery\" />
+    <Folder Include="jQueryUi\" />
+    <Folder Include="jQuery\51-60\" />
+    <Folder Include="jQuery\61-70\" />
+    <Folder Include="jQuery\71-80\" />
+    <Folder Include="jQuery\81-90\" />
+    <Folder Include="jQuery\90+\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

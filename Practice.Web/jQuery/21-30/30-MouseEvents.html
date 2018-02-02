@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mouse Events</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#div1')
+                .mouseover(function () {
+                    $('#div4').fadeIn(2000);
+                })
+                .mouseout(function () {
+                    $('#div4').fadeOut(2000);
+                });
+            $('#div2')
+                .mouseenter(function () {
+                    $('#div5').fadeIn(2000);
+                })
+                .mouseleave(function () {
+                    $('#div5').fadeOut(2000);
+                });
+            $('#div3')
+                .hover(function () {
+                    $('#div6').fadeIn(2000);
+                }, function () {
+                    $('#div6').fadeOut(2000);
+                });
+        });
+    </script>
+</head>
+<body>
+    <h2>Mouse Events</h2>
+    <div id="div1">Mouse over - Mouse out</div>
+    <div id="div2">Mouse enter - Mouse leave</div>
+    <div id="div3">Mouse Hover</div>
+    <div style="display:none;border: solid green;" id="div4">Mouse Over - Mouse out</div>
+    <div style="display:none;border: solid green;" id="div5">Move enter - Mouse leave</div>
+    <div style="display:none;border: solid green;" id="div6">Mouse hover</div>
+</body>
+</html>

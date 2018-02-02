@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[title="one"]').css('border', '5px solid black');
+            $('div.alpha').css('border', '5px solid black');
+        });
+    </script>
+</head>
+<body>
+    <div>
+        To select all html element by attribute use $('[attribute]') or attribute with value attrVal use $('[attribute="attrVal"]')
+    </div>
+    <div title="one">One</div><br />
+    <div title="two">two</div><br />
+    <div class="alpha">ABC</div>
+</body>
+</html>

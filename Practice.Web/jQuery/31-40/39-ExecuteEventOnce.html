@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').one({
+                click: function () {
+                    $('#divResult').html('clicked');
+                },
+                mouseover: function () {
+                    $('#divResult').html('mouse over');
+                },
+                mouseout: function () {
+                    $('#divResult').html('mouse out');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Execute event only once</h2>
+    <input type="button" value="Submit" id="btnSubmit" />
+    <div id="divResult"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Checked Selector</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var checkedRadioButton = $('[type="radio"]:checked');
+                if (checkedRadioButton.length > 0) {
+                    $('#divRadioResult').html(checkedRadioButton.val() + ' is checked');
+                }
+                else {
+                    $('#divRadioResult').html('No Radio button checked');
+                }
+
+                var checkedCheckBox = $('[type="checkbox"]:checked');
+                var resultString = '';
+                if (checkedCheckBox.length > 0) {
+                    resultString += checkedCheckBox.length + ' items selected <br />';
+                    checkedCheckBox.each(function () {
+                        resultString += $(this).val() + '<br />';
+                    });
+                    $('#divCheckResult').html(resultString);
+                }
+                else {
+                    $('#divCheckResult').html('No checbox checked');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Checked Selector</h2>
+    <div>
+        Radio buttons: 
+        <input type="radio" name="numbers" value="One"/>One
+        <input type="radio" name="numbers" value="Two"/>Two
+        <input type="radio" name="numbers" value="Three" />Three
+    </div>
+    <div>
+        Checked Boxes:
+        <input type="checkbox" name="Frutis" value="Apple"/>Apple
+        <input type="checkbox" name="Fruits" value="Banana"/>Banana
+        <input type="checkbox" name="Fruits" value="Citrous"/>Citrous
+    </div>
+    <input type="button" value="Submit" id="btnSubmit" />
+    <div id="divRadioResult"></div>
+    <div id="divCheckResult"></div>
+</body>
+</html>

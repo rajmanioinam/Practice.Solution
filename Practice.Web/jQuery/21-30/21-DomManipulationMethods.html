@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM manipulation methods</title>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var divConfig = {
+                'title': 'myTitle',
+                'style': 'border: solid blue',
+                'name': 'myDiv'
+            };
+            $('div').attr(divConfig);
+            var result = '';
+            $('div').each(function () {
+                result += 'title = ' + $(this).attr('title') + '<br/>';
+                result += 'style = ' + $(this).attr('style') + '<br/>';
+                result += 'name = ' + $(this).attr('name') + '<br/><br/>';
+            });
+            $('#resultSpan').html(result);
+        });
+    </script>
+</head>
+<body>
+    <h2>DOM manipulation methods</h2>
+    <div title="SampleTitle1">Sample 1</div>
+    <div title="SampleTitle2">Sample 2</div>
+    <input type="text" value="Test" style="border:solid; color:black"/>
+    <span id="resultSpan"></span>
+</body>
+</html>
