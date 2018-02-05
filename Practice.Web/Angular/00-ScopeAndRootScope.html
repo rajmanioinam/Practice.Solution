@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', []);
+        myApp.controller('cntrl1', function ($scope, $rootScope) {
+            $scope.name = 'Controller 1';
+            $rootScope.ApplicationName = 'Scope and RootScope';
+        });
+        myApp.controller('cntrl2', function ($scope, $rootScope) {
+            $scope.name = 'Controller 2';
+            $scope.MyApplicationName = $rootScope.ApplicationName;
+            $rootScope.ApplicationName = 'Updated rootScope';
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="cntrl1">
+        scope.name: {{name}} <br />
+        rootScope.ApplicationName: {{ApplicationName}}<br /><br />
+    </div>
+    <div ng-controller="cntrl2">
+        scope.name: {{name}}<br />
+        scope.MyApplicationName: {{MyApplicationName}}<br />
+        rootscope.ApplciationName: {{ApplicationName}}<br />
+    </div>
+</body>
+</html>

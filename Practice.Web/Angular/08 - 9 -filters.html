@@ -45,7 +45,7 @@
             <tr ng-repeat="employee in employees|limitTo: rowCount|orderBy:sortColumn">
                 <td>{{employee.name}}</td>
                 <td>{{employee.dateOfBirth|date:"MM/dd/yyyy"}}</td>
-                <td>{{employee.gender}}</td>                
+                <td>{{employee.gender}}</td>
                 <td>{{employee.salary|number:2}}</td>
                 <td>{{employee.salary|currency:"$":2}}</td>
             </tr>

@@ -11,14 +11,20 @@
                 $('#divResult').append('Right click disabled<br/>')
             });
             $('#myLink').on('click', function (e) {
+                //return false;
                 e.preventDefault();
                 $('#divResult').append('link disabled <br/>');
+            });
+            $('#divWrapper').click(function () {
+                alert('div wrapper clicked');
             });
         });
     </script>
 </head>
 <body>
-    <a id="myLink" href="http://www.google.com">Google</a>
+    <div id="divWrapper">
+        <a id="myLink" href="http://www.google.com">Google</a>
+    </div>
     <input type="password" />
     <div id="divResult"></div>
 </body>

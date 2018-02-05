@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/angular.min.js"></script>
+    
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myController', function ($scope) {
+            var fruit = {
+                id: 101,
+                fruitName: "Avocado",
+                color: "Green",
+                comments: "",
+                updatedDate: "2018-02-01"
+            }
+            $scope.fruit = fruit;
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <form name="myForm">
+        <h2>Angular Validation</h2>
+        <h3>Data-type Validation: </h3>
+        Number:
+        <input type="number" name="fruitId" ng-model="fruit.id" required />
+        <span style="color:red" ng-show="myForm.fruitId.$dirty&&myForm.fruitId.$invalid">
+            <span ng-show="myForm.fruitId.$error.required">Fruit ID is required.</span>
+            <span ng-show="myForm.fruitId.$error.number">Not a valid number</span>
+        </span>
+        <br /><br />
+        Text:
+        <input type="text" name="fruitName" ng-model="fruit.fruitName" required />
+        <span style="color:red" ng-show="myForm.fruitName.$dirty&&myForm.fruitName.$invalid">
+            <span ng-show="myForm.fruitName.$error.required">Text is required.</span>
+        </span>
+        <br /><br />
+        Date:
+        <input type="date" name="updatedDate" ng-model="fruit.updatedDate" required placeholder="yyyy-MM-dd"/>
+        <span style="color:red" ng-show="myForm.updatedDate.$dirty&&myForm.updatedDate.$invalid">
+            <span ng-show="myForm.updatedDate.$error.required">Date is required.</span>
+            <span ng-show="myForm.updatedDate.$error.date">Invalid date</span>
+        </span>
+    </form>
+</body>
+</html>
