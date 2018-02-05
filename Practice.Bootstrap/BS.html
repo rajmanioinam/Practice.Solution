@@ -8,7 +8,73 @@
     <script src="Scripts/bootstrap.js"></script>
 </head>
 <body>
+    <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">My Bootstrap</a>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
     <div class="container">
+            
+        <div class="row">
+            <h3>Glyphicons</h3>
+            <span class="glyphicon glyphicon-glass"> glyphicon glyphicon-glass </span>
+            <span class="glyphicon glyphicon-home"> glyphicon glyphicon-home </span>
+            <span class="glyphicon glyphicon-music"> glyphicon glyphicon-music </span>
+            <span class="glyphicon glyphicon-ok"> glyphicon glyphicon-ok </span>
+            <span class="glyphicon glyphicon-upload"> glyphicon glyphicon-upload </span>
+            <span class="glyphicon glyphicon-download"> glyphicon glyphicon-download </span>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-cloud-upload"> Upload</span>
+            </button>
+        </div>
+        <div class="row">
+            <h3>Visibility</h3>
+            <p class="visible-xs">Visible in X-small</p>
+            <p class="visible-sm">Visible in small</p>
+            <p class="visible-md">Visible in medium</p>
+            <p class="visible-lg visible-md">visible in Large</p>            
+        </div>
+        <div class="row table-responsive">
+            <h1>Table</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Fruit Name</th>
+                        <th>Color</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Red</td>
+                        <td>Some Comments</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                        <td>Green</td>
+                        <td>Some Comments</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="row">
             <h3>Panel</h3>
             <div class="panel panel-default">
